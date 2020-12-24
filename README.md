@@ -1,5 +1,5 @@
 # docker-demo
-A Docker - composer example that provides flask, java, mysql and mongo container
+A Docker - composer example that provides a Flask, Java, Redis, MySQL and Mongo container
 
 # How to use a docker and composer
 ##Docker Prerequisites:
