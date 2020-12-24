@@ -7,7 +7,7 @@ services:
     networks: 
        - app-tier
     volumes:
-       - $HOME/projects/mysql/db:/var/lib/mysql
+       - ./mysql/db:/var/lib/mysql
     ports:
       - "3306:3306"
     cap_add:
@@ -22,7 +22,7 @@ services:
     networks: 
        - app-tier
     volumes:
-       - $HOME/projects/mongo/db:/data/db
+       - ./mongo/db:/data/db
     ports:
       - "27017:27017"
 
@@ -48,7 +48,7 @@ services:
       - app-tier
     restart: always      
     volumes:
-       - $HOME/projects/flask/web:/app      
+       - ./flask/web:/app
 
   java_app:
     build:
@@ -57,7 +57,7 @@ services:
     ports:
       - "8080:8080"    
     volumes:
-       - $HOME/projects/java/docker-spring-boot/target:/opt/app     
+       - ./java/docker-spring-boot/target:/opt/app
     links:
       - mongo_db:mongo_db       
     depends_on:
