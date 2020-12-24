@@ -1,0 +1,8 @@
+flask
+redis
+pymysql
+pymongo
+flask-mysql
+jsonify
+requests
+cryptography
