@@ -21,3 +21,8 @@ venv
 node_modules
 .sass-cache
 .idea
+
+mongo/db
+mysql/db
+__pycache__
+java/docker-spring-boot/target
