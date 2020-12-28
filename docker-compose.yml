@@ -68,6 +68,21 @@ services:
       - app-tier
     restart: always        
 
+  nodejs_app:
+    build:
+      context: .
+      dockerfile: ./nodejs/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./nodejs:/app/src
+    links:
+      - mongo_db:mongo_db
+    depends_on:
+      - mongo_db
+    networks:
+      - app-tier
+    restart: always
 
 networks:
   app-tier:

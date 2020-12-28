@@ -15,7 +15,7 @@ cache = redis.Redis(host='redis', port=6379)
 #     quote_plus("mongo"), quote_plus("mongo"), quote_plus("localhost:27017"))
 mongo = MongoClient('mongo_db', 27017)
 
-mysqldb = pymysql.connect('mysql_db', 'root', '1234', 'andrew')
+#mysqldb = pymysql.connect('mysql_db', 'root', '1234', 'andrew')
 
 
 def get_hit_count():

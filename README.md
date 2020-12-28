@@ -2,11 +2,12 @@
 A Docker - composer example that provides a Flask, Java, Redis, MySQL and Mongo container
 
 # How to use a docker and composer
-##Docker Prerequisites:
+## Docker Prerequisites:
 - Windows
 https://docs.docker.com/docker-for-windows/install/
 - Mac
 https://docs.docker.com/docker-for-mac/install/
+
 
 ### 1. git clone
 ```
@@ -27,10 +28,21 @@ Successfully built a597836853da
 Successfully tagged docker-demo_java_app:latest
 ```
 
+# Let’s run the API using docker
+## Let’s build the docker image
+```
+docker-compose build
+```
+
+## Docker compose up with all associated docker compose services
 ```
 $ docker-compose up
 ```
-
+#### Note:
+If you prefer to use a daemon mode, Let’s run the above command in the background:
+```
+$ docker-compose up -d
+```
 
 ### 3. Python application
 ```
@@ -44,4 +56,21 @@ mvn clean pacakge
 ...
 http://localhost:8080
 ```  
+
+### 5. Node.js application
+Reference: https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image
+```
+...
+http://localhost:8081
+```  
+
+### If you want to build/run a specific application
+```
+docker-compose build <custom service>
+docker-compose run <custom service>
+
+i.e. 
+docker-compose build nodejs_app
+docker-compose run nodejs_app
+```
 
