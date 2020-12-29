@@ -15,7 +15,7 @@ COPY ./flask/requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 EXPOSE 5000
-COPY . .
+#COPY . .
 
 # CMD tail -f /dev/null
 CMD [ "python3", "app.py" ]

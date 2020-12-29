@@ -49,9 +49,11 @@ services:
   redis:
     image: "redis:alpine"
     networks: 
-       - app-tier    
+       - app-tier
+    ports:
+      - "6379:6379"
 
-  python_app:
+  flask_app:
     build:
       context: .
       dockerfile: ./flask/Dockerfile
@@ -69,6 +71,27 @@ services:
     restart: always      
     volumes:
        - ./flask/web:/app
+
+  django_app:
+    build:
+      context: .
+      dockerfile: ./django/Dockerfile
+    ports:
+      - "8000:8000"
+    links:
+      - mongo_db:mongo_db
+      - mysql_db:mysql_db
+    depends_on:
+      - mysql_db
+      - mongo_db
+      - redis
+    networks:
+      - app-tier
+    restart: always
+    volumes:
+      - ./django/app:/app
+    env_file:
+      - ./django/env.dev
 
   java_app:
     build:

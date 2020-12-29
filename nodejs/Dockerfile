@@ -12,7 +12,7 @@ WORKDIR /app
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY ./nodejs/server.js ./src/
+#COPY ./nodejs/server.js ./src/
 
 COPY ./nodejs/package*.json ./
 RUN npm install

@@ -32,7 +32,7 @@ def get_hit_count():
 @app.route('/', methods=['GET'])
 def hello():
     count = get_hit_count()
-    return 'Hello World! I have been seen {} times.\n'.format(count)
+    return 'Flask in a Docker!!! Hello World! I have been seen {} times.\n'.format(count)
 
 @app.route('/mongo', methods=['GET'])
 def mongo_fetch():   
