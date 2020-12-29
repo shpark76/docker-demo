@@ -61,7 +61,7 @@ http://localhost:8080
 Reference: https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image
 ```
 ...
-http://localhost:8081
+http://localhost:3000
 ```  
 
 ### If you want to build/run a specific application
