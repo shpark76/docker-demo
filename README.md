@@ -1,5 +1,5 @@
 # docker-demo
-A Docker - composer example that provides a Flask, Java, Redis, MySQL and Mongo container
+A Docker - composer example that provides a Flask, Java, Redis, Elasticsearch, MySQL and Mongo container
 
 # How to use a docker and composer
 ## Docker Prerequisites:
@@ -16,6 +16,11 @@ git clone git@github.com:shpark76/docker-demo.git
 
 ### 2. docker compose build and up 
 ```
+// create a java jar package to build a docker-compose
+cd java/docker-spring-boot
+mvn clean package
+
+
 $ docker-compose build
 ...
  ---> Using cache
@@ -51,9 +56,6 @@ http://localhost:5000
 
 ### 4. Java application
 ```
-cd java/docker-spring-boot
-mvn clean pacakge
-...
 http://localhost:8080
 ```  
 

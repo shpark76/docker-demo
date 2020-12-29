@@ -12,7 +12,7 @@ WORKDIR /opt/app
 
 # cp target/spring-boot-web.jar /opt/app/app.jar
 #COPY ${JAR_FILE} app.jar
-COPY ${JAR_FILE} .
+#COPY ${JAR_FILE} .
 
 # java -jar /opt/app/app.jar
 ENTRYPOINT ["java","-jar","spring-boot-web.jar"]
