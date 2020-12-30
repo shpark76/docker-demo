@@ -72,6 +72,17 @@ Reference: https://github.com/nodejs/docker-node/blob/master/README.md#how-to-us
 http://localhost:3000
 ```  
 
+### 7. Jupyter Notebook
+```
+...
+notebook_1        | [I 01:04:55.648 NotebookApp]  or http://127.0.0.1:8888/?token=0b6df051cfa20fa2656ae45bfc77bfe7510ea66abb7fcce7
+...
+
+Open browser:
+http://127.0.0.1:8888/?token=0b6df051cfa20fa2656ae45bfc77bfe7510ea66abb7fcce7
+```
+
+
 #### If you want to build/run a specific application
 > ```
 > docker-compose build <custom service>

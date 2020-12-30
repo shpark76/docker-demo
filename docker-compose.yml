@@ -127,6 +127,18 @@ services:
       - app-tier
     restart: always
 
+  notebook:
+    image: jupyter/all-spark-notebook
+    labels:
+      description: Intel Python using Jupyter Notebooks
+      name: jupyter notebook
+    ports:
+      - "8888:8888"
+    networks:
+      - app-tier
+    volumes:
+      - ./notebook:/home/notebooks
+
 networks:
   app-tier:
     driver: bridge
