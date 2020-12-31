@@ -4,6 +4,7 @@ services:
 
   mysql_db:
     image: mysql:latest
+    restart: always
     networks: 
        - app-tier
     volumes:
@@ -11,10 +12,28 @@ services:
     ports:
       - "3306:3306"
     cap_add:
-      - SYS_NICE      
-    command: --default-authentication-plugin=mysql_native_password
+      - SYS_NICE
     environment:
-      MYSQL_ROOT_PASSWORD: 1234 
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=1234
+
+  postgres_db:
+    image: "postgres"
+    restart: always
+    networks:
+      - app-tier
+    volumes:
+      - ./postgresql/db:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    cap_add:
+      - SYS_NICE
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234
 
   mongo_db:
     image: mongo:latest

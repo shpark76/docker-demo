@@ -1,5 +1,5 @@
 # docker-demo
-A Docker - composer example that provides a Django, Flask, Java, Redis, Elasticsearch, MySQL and Mongo container
+A Docker - composer example that provides a Django, Flask, Java, Redis, Elasticsearch, MySQL, Postgres, and Mongo container
 
 # How to use a docker and composer
 ---
@@ -137,7 +137,14 @@ But, you may not be able to connect via command line.
 Please use workbench
 ```
 
-### 4. Mongo
+### 4. Postgres
+https://www.pgadmin.org/download/
+```
+psql --host=localhost --username=user --password --dbname=app
+Password for user postgres: 1234
+```
+
+### 5. Mongo
 https://docs.mongodb.com/manual/mongo/
 ```
 $ mongo "mongodb://localhost:27017"
